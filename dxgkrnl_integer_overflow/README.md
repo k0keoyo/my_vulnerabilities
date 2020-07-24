@@ -1,6 +1,19 @@
 ### About Vulnerability
 
 ----
+
+***To reproduce you need to check your display adapter WDDM version which must be 2.5 or later***
+
+There is display adapter check in code path
+
+```
+ if ( (signed int)DXGADAPTER::GetDriverVersion(*(_QWORD *)(*(_QWORD *)(v30 + 16) + 16i64), v21, v27) >= 2500 )
+```
+
+So it can't be triggered in VM :( (or if you want to debug in VM, you can modify value by windbg kernel attaching :P)
+
+----
+
 #### Crash Dump
 
 ```

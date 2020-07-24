@@ -135,7 +135,10 @@ But finally it fail because there is a check in function CapturePresentMultiPlan
 #### Time Line
 
 ***Jul 16 2018:*** Vulnerability reported
+
 ***Jul 17 2018:*** Microsoft reproduced
+
 ***Sep 11 2018:*** Patch release
+
 ***Oct 10 2018:*** Bounty awarded
 

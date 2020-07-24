@@ -130,7 +130,7 @@ variable v7 is D3DKMT_PRESENT_MULTIPLANE_OVERLAY3->PresentPlaneCount(count of D3
 
 After I review the code after patch, I found that there may be another way to bypass the patch first, I think although function check D3DKMT_PRESENT_MULTIPLANE_OVERLAY3->D3DKMT_MULTIPLANE_OVERLAY2->D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES2->DirtyRectCount if it's lager than 0xFFF, but it use a loop to add variable, if I can set D3DKMT_PRESENT_MULTIPLANE_OVERLAY3->PresentPlaneCount to a large count, it may trigger integer overflow finally.
 
-But finally it fail because there is a check in function CapturePresentMultiPlaneOverlayArgs3.
+But finally it fail because there is a check in another function CapturePresentMultiPlaneOverlayArgs3.
 
 ```
   if ( (unsigned int)(HIDWORD(v12) - 1) > 9 ) // check pPresentPlaneCount
